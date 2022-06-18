@@ -101,7 +101,7 @@ class RegisterController {
       }
     );
   }
-  // UTEst cosd
+  // Xác thực member
   activeMember(req, res) {
     var token = req.body.token;
     var email = req.body.email;
