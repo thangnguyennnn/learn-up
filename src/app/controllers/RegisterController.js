@@ -101,7 +101,7 @@ class RegisterController {
       }
     );
   }
-  // Update
+  // UTEst cosd
   activeMember(req, res) {
     var token = req.body.token;
     var email = req.body.email;
