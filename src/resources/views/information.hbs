@@ -1,0 +1,155 @@
+<section class="ftco-section">
+    <div class="container">
+        {{#ifEquals infos 'changeFail'}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Có lỗi xảy ra vui lòng thử lại sau vài phút!
+        </div>
+        {{/ifEquals}}
+        {{#ifEquals infos 'changeSucc'}}
+        <div class="alert alert-success dp-center-tag" role="alert">
+            Mật khẩu của bạn đã được đổi thành công!
+        </div>
+        {{/ifEquals}}
+        {{#ifEquals infos 'incorrectPass'}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Mật khẩu cũ không chính xác!
+        </div>
+        {{/ifEquals}}
+        
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <div class="wrap min-height-80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4" style="float: left; display: flex;">
+
+                            </div>
+                            <div class="col-lg-4 dp-center-tag" style="float: left; display: flex;">
+                                <div class="info-cus">
+                                    <p class="title-cus dp-center-tag">
+                                        Thông tin của bạn
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12 dp-center-tag"
+                                style="float: left; display: flex; padding-bottom: 20px;">
+                                <div class="row">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <img class="avatar-cus" src="../source/src/slider-1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12" style="float: left; display: flex;">
+                                <div class="">
+                                    <p class="">
+                                        Tên: {{user.name}}
+                                    </p>
+                                    <p class="">
+                                        ID: {{user.id}}
+                                    </p>
+                                    <p class="">
+                                        Tài khoản: {{user.email}}
+                                    </p>
+                                    <p class="">
+                                        Điểm trung bình (GPA): {{user.GPA}}
+                                    </p>
+                                    <p class="">
+                                        Đóng góp: 24 tài liệu
+                                    </p>
+
+                                    <p class="">
+                                        Ngày tham gia: {{user.joinDay}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12" style="padding-bottom: 20px;">
+                                <div class="row">
+                                    <div class="col-lg-4" style="padding-bottom: 20px;">
+                                        <a class="btn btn-primary edit-namee">
+                                            Đổi họ tên
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a class="btn btn-primary edit-passs">
+                                            Đổi mật khẩu
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="history.html" class="btn btn-primary">
+                                            Lịch sử kiểm tra
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<div class="edit-name">
+    <div class="popup direct">
+        <span class="edit-name-closed"><i class="fa fa-close"></i></span>
+        <form method="POST" action="/changeName">
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    Đổi họ tên
+                </div>
+            </div>
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    <input name="newName" autocomplete="off" placeholder="Nhập tên mới" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    <button href="information.html" class="btn btn-primary">
+                        Đổi
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div class="edit-pass">
+    <div class="popup direct">
+        <span class="edit-pass-closed"><i class="fa fa-close"></i></span>
+        <form action="/changePassword" method="POST">
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    Đổi họ tên
+                </div>
+            </div>
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    <input autocomplete="off" name="oldPass" placeholder="Nhập mật khẩu cũ" class="form-control" type="password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    <input autocomplete="off" name="newPass" placeholder="Nhập mật khẩu mới" class="form-control" type="password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="container min-height-60 dp-center-tag">
+                    <button class="btn btn-primary">
+                        Đổi
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

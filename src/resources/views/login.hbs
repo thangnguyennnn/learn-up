@@ -1,0 +1,126 @@
+<section class="ftco-section active">
+    <div class="container">
+        {{#if loginFail}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Vui lòng kiểm tra lại thông tin!
+        </div>
+        {{/if}}
+        {{#if outSession}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Vui lòng đăng nhập để tiếp tục!
+        </div>
+        {{/if}}
+        {{#if EmailExist}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Email đã được sử dụng!
+        </div>
+        {{/if}}
+        {{#if notActive}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Vui lòng kiểm tra hộp thư email {{tk}} để kích hoạt tài khoản!
+        </div>
+        {{/if}}
+        {{#if activated}}
+        <div class="alert alert-success dp-center-tag" role="alert">
+            Đã kích hoạt tài khoản thành công! Đăng nhập để tiếp tục!
+        </div>
+        {{/if}}
+        {{#if activatedd}}
+        <div class="alert alert-success dp-center-tag" role="alert">
+            Tài khoản của bạn đã được kích hoạt trước đó!
+        </div>
+        {{/if}}
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div id="bgr-img" class="img pos-modifier-1" style="background-image: url(../source/src/loginbgr.jpg);">
+                </div>
+                <div id="signin" class="wrap dp-flex pos-modifier-2">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Đăng ký</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a title="Đăng nhập với Google" href="#"
+                                        class="social-icon d-flex align-items-center justify-content-center"><span
+                                            class="fa fa-facebook"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <form action="/register" class="signin-form" method="POST">
+                            <div class="form-group mb-3">
+                                <label class="label" for="name">Email</label>
+                                <input autocomplete="off" type="text" name="email" class="form-control"
+                                    placeholder="Email" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Mật khẩu</label>
+                                <input autocomplete="off" type="password" name="password" class="form-control"
+                                    placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3 h-50">Đăng
+                                    ký</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <a href="#">Hướng dẫn</a>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="text-center">Đã có tài khoản? <a class="cl_4be3db" id="ToSignin">Đăng
+                                nhập</a>
+                        </p>
+                    </div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Đăng nhập</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a title="Đăng nhập với Google" href="#"
+                                        class="social-icon d-flex align-items-center justify-content-center"><span
+                                            class="fa fa-facebook"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <form id="signin-form" action="/loginSystem" class="signin-form" method="POST">
+                            <div class="form-group mb-3">
+                                <label class="label" for="name">Email</label>
+                                <input type="text" name="email"
+                                    class="form-control {{#if loginFail}}bd-color-red{{/if}}" placeholder="Email"
+                                    required value="{{tk}}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Mật khẩu</label>
+                                <input type="password" name="password"
+                                    class="form-control {{#if loginFail}}bd-color-red{{/if}}" placeholder="Mật khẩu"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3 h-50">Đăng
+                                    nhập</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <label class="checkbox-wrap checkbox-primary mb-0">Nhớ tài khoản
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="/forget-password.html">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="text-center">Chưa có tài khoản?
+                            <a class="cl_4be3db" id="ToSignup">Đăng ký</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

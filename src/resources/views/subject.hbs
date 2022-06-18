@@ -1,0 +1,126 @@
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="wrap min-height-80">
+                    <div class="col-lg-4" style="float: left; display: flex;">
+                        <div class="info-cus">
+                            <p class="title-cus">
+                                {{title}}
+                            </p>
+                            <p>
+                                Trường: Đại học FPT
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row merged20">
+                    <div class="col-lg-12">
+                        <div class="central-meta">
+                            <div class="title-block">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="align-left">
+                                            <h5>
+                                                <span>Các môn học của bạn</span>
+                                            </h5>
+                                            <a class="d-flex align-items-center show-add-sub">
+                                                <div class="btn btn-primary">
+                                                    <i class="fa fa-plus"></i> Thêm môn học
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="central-meta">
+                            <div class="row">
+                                {{#each subjects}}
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 merged5">
+                                    <div class="wrap min-height-150 item-cus">
+                                        <a class="" href="/{{this.majorID}}/{{this.subjectID}}" title="{{this.subjectName}}" data-strip-group="mygroup"
+                                            data-strip-group-options="loop: false">
+                                            <div class="strip">
+                                                <p class="title-cus editp"><img class="fix-size-40 img-cus "
+                                                        src="../source/src/name.png"> {{this.subjectID}} - {{this.subjectName}}</p>
+                                                <p class="p-cus"><img class="img-cus" src="../source/src/all (1).png">
+                                                    10 tài liệu</p>
+                                                <p class="p-cus"><img class="img-cus" src="../source/src/schedule.png">
+                                                    {{this.createDate}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div><!-- photos -->
+                    </div><!-- centerl meta -->
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row merged20">
+                    <div class="col-lg-12">
+                        <div class="central-meta">
+                            <div class="title-block">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="align-left">
+                                            <h5>
+                                                <span>Các bài tập của bạn</span>
+                                            </h5>
+                                            <a
+                                                class="text-reset dropdown-toggle d-flex align-items-center hidden-arrow show-add-ex">
+                                                <div class="btn btn-primary">
+                                                    <i class="fa fa-plus"></i> Thêm bài tập
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="central-meta">
+                            <div class="row">
+                                {{#each quizs}}
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 merged5">
+                                    <div class="wrap min-height-150 item-cus">
+                                        <a class="" href="/learning.html" title="" data-strip-group="mygroup"
+                                            data-strip-group-options="loop: false">
+                                            <div class="strip">
+                                                <p class="title-cus"><img class="fix-size-40 img-cus"
+                                                        src="../source/src/name.png"> {{this.quizID}} - {{this.quizName}}</p>
+                                                <p class="p-cus"><img class="img-cus" src="../source/src/all (1).png">
+                                                    10 câu hỏi</p>
+                                                <p class="p-cus"><img class="img-cus" src="../source/src/schedule.png">
+                                                    {{this.createDate}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

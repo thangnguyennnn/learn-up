@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../source/src/{{icon}}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../source/css/style.css">
+    <link rel="stylesheet" href="../source/css/mystyle.css">
+    <link rel="stylesheet" href="../source/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../source/css/navStyle/all.min(1).css">
+    <link rel="stylesheet" href="../source/css/navStyle/mdb.min.css">
+    <link rel="stylesheet" href="../source/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../source/css/owl.theme.default.min.css">
+</head>
+
+<body class="cl_edf2f7 scrollbar-info">
+    <div class="loader">
+        <span class="fa fa-star xoay icon"></span>
+    </div>
+
+    <header class="mb-4 fixed-top wrap" style="overflow: visible;">
+        <div class="container">
+            <div class="p-3 text-center bg-white border-bottom">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-lg-block">
+                            <a href="/home.html" class="ms-md-2">
+                                <img src="../source/src/Top Learn.png" height="35" />
+                            </a>
+                        </div>
+                        <div
+                            class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center d-none d-lg-flex">
+
+                            <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
+                                <input autocomplete="off" type="search" class="form-control rounded"
+                                    placeholder="Tìm kiếm" />
+                                <span class="input-group-text border-0 d-none d-lg-flex">
+                                    <img class="icon-cus" src="../source/src/search.png">
+                                </span>
+                            </form>
+                        </div>
+                        {{#if session.isLogin}}
+                        <div class="col-lg-5 d-flex justify-content-center justify-content-md-end align-items-center">
+                            <div class="dropdown pdr-20px">
+                                <a class="text-reset d-flex align-items-center hidden-arrow" href="/sets.html"
+                                    role="button">
+                                    <div class="btn btn-primary editp">
+                                        Tài liệu của bạn
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown pdr-20px">
+                                <a class="text-reset dropdown-toggle d-flex align-items-center hidden-arrow"
+                                    id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <div class="btn btn-primary">
+                                        <img class="icon-cus" src="../source/src/plus (2).png"> Tạo
+                                    </div>
+                                </a>
+                                <input id="IDM" type="hidden" value="{{session.majo}}">
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item show-add-ex">Gói câu hỏi</a></li>
+                                    <li><a class="dropdown-item show-add-subb">Môn học</a></li>
+                                    <li><a class="dropdown-item show-add-major">Ngành học</a></li>
+                                </ul>
+                            </div>
+                            <a class="text-reset me-3" href="#">
+                                <img class="icon-cus" src="../source/src/information.png">
+                            </a>
+
+                            <!-- Notification -->
+                            <div class="dropdown">
+                                <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
+                                    id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img class="icon-cus" src="../source/src/bell.png">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Some news</a></li>
+                                    <li><a class="dropdown-item" href="#">Another news</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- User -->
+                            <div class="dropdown">
+                                <a class="text-reset dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                                    id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="../source/src/slider-1.jpg" class="avatar-cus-1" height="22" alt=""
+                                        loading="lazy" />
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/information/full">Xem thông tin</a></li>
+                                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                                    <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="col-lg-5 d-flex justify-content-center justify-content-md-end align-items-center">
+                            <div class="dropdown pdr-20px">
+                                <a class="text-reset d-flex align-items-center hidden-arrow" href="/login.html"
+                                    role="button">
+                                    <div class="btn btn-primary">
+                                        Đăng nhập
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {{/if}}
+                        <!-- Right elements -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{{body}}}
+    <div class="new-major">
+        <div class="popup direct">
+            <span class="new-closed"><i class="fa fa-close"></i></span>
+            <form action="/addMajor" method="GET">
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag title-cus">
+                        Thêm ngành học
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag">
+                        <input autocomplete="off" name="majorKey" class="form-control" type="text"
+                            placeholder="Mã hoặc từ khóa">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag">
+                        <input autocomplete="off" name="major" class="form-control" type="text"
+                            placeholder="Tên ngành học">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag">
+                        <button class="btn btn-primary">
+                            Thêm
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="new-subject">
+        <div class="popup direct">
+            <span class="new-sub-closed"><i class="fa fa-close"></i></span>
+            <form action="/addSubject" method="GET">
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag title-cus">
+                        Tên môn học
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Ngành
+                            </div>
+                            <div class="col-lg-8">
+                                <select name="majorID" class="form-control" id="listMajorr">
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Mã môn học
+                            </div>
+                            <div class="col-lg-8">
+                                <input name="subID" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Tên môn học
+                            </div>
+                            <div class="col-lg-8">
+                                <input name="subName" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag title-cus">
+                        <button class="btn btn-primary">
+                            Thêm
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="new-ex">
+        <div class="popup direct">
+            <span class="new-ex-closed"><i class="fa fa-close"></i></span>
+            <p style="color: red;">* Lưu ý hãy chọn chính xác thư mục bạn muốn thêm</p>
+            <form action="/addQuiz" method="GET">
+                <div class="row">
+                    <div class="container min-height-60 dp-center-tag title-cus">
+                        Thêm bài tập
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Ngành
+                            </div>
+                            <div class="col-lg-8">
+                                <select name="mid" class="form-control" id="listMajorrr">
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Môn học
+                            </div>
+                            <div class="col-lg-8">
+                                <select name="sid" class="form-control" id="listSubb">
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Mã bài tập
+                            </div>
+                            <div class="col-lg-8">
+
+                                <input autocomplete="off" name="qid" class="form-control" type="text" required>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Tên bài tập
+                            </div>
+                            <div class="col-lg-8">
+
+                                <input autocomplete="off" name="qname" class="form-control" type="text" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 container min-height-60 dp-center-tag">
+                        <button class="btn btn-primary">
+                            Thêm
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../source/js/mdb.min.js"></script>
+<script src="../source/js/jquery.min.js"></script>
+<script src="../source/js/popper.js"></script>
+<script src="../source/js/bootstrap.min.js"></script>
+
+<script src="../source/js/owl.carousel.min.js"></script>
+<script src="../source/js/main.js"></script>
+
+
+</html>
