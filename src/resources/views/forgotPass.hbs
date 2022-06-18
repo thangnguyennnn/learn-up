@@ -1,10 +1,15 @@
 <section class="ftco-section">
     <div class="container">
-        {{#if sendS}}
+        {{#ifEquals sendS true}}
         <div class="alert alert-warning dp-center-tag" role="alert">
             Chúng tôi đã gửi một mật khẩu mới cho bạn, kiểm tra email của bạn để lấy mật khẩu!
         </div>
-        {{/if}}
+        {{/ifEquals}}
+        {{#ifEquals sendS false}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Tài khoản chưa được đăng ký! Vui lòng kiểm tra lại!
+        </div>
+        {{/ifEquals}}
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="wrap d-md-flex">

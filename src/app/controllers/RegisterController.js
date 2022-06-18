@@ -103,8 +103,8 @@ class RegisterController {
   }
   // Xác thực member
   activeMember(req, res) {
-    var token = req.body.token;
-    var email = req.body.email;
+    var token = req.query.token;
+    var email = req.query.email;
     Account.findOneAndUpdate(
       { activated: token, email: email },
       { $set: { activated: "activated" } },

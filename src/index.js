@@ -65,7 +65,7 @@ app.get('/logout', logout.logout);
 
 //// register router
 app.post('/register', register.registerMember);
-app.post('/activated', register.activeMember);
+app.get('/activated', register.activeMember);
 
 //// Information router
 app.get('/information/:in', infoPage.loadInforPage);
