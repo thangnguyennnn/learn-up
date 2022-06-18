@@ -108,7 +108,7 @@ class InformationController {
       }
     );
   };
-
+  // Function change password
   changePassword = (req, res) => {
     const oldPass = req.body.oldPass;
     const newPass = req.body.newPass;
