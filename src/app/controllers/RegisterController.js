@@ -101,6 +101,7 @@ class RegisterController {
       }
     );
   }
+  
   // Xác thực member
   activeMember(req, res) {
     var token = req.query.token;

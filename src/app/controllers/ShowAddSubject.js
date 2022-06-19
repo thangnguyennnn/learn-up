@@ -4,8 +4,14 @@ const Major = require('../models/major');
 const homePage = require('./HomeController');
 const subject = require('../models/subject')
 const { mutipleMongooseToObject } = require('../util/mgdb');
+const logger = require('../../config/winston/winston');
+
+
 exports.LoadMajor = (req, res) => {
+    // Kiểm tra trạng thái người dùng
     const account = req.session.account;
+    logger.error('Tài khoản: ' + account.email);
+
     if (account != null) {
         var id = account.id;
         var mid = req.params.sub;

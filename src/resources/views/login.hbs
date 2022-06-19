@@ -5,6 +5,11 @@
             Vui lòng kiểm tra lại thông tin!
         </div>
         {{/if}}
+        {{#if err}}
+        <div class="alert alert-warning dp-center-tag" role="alert">
+            Có lỗi xảy ra vui lòng thử lại sau!
+        </div>
+        {{/if}}
         {{#if outSession}}
         <div class="alert alert-warning dp-center-tag" role="alert">
             Vui lòng đăng nhập để tiếp tục!

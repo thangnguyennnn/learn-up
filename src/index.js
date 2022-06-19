@@ -7,11 +7,19 @@ const mongoose = require('mongoose');
 const db = require('./config/db');
 const methodOverride = require('method-override');
 
-db.connect();
-
+// Tạo app express
 const app = express();
+
+// Cấu hình thư mục gốc cho app
+app.use(express.static("src/public"));
+
+// Cổng lắng nghe 3000
 const port = 3000;
 
+// Kết nối DB
+db.connect();
+
+// Tạo session
 app.use(session({
     resave: true,
     saveUninitialized: true,
@@ -22,13 +30,16 @@ app.use(function (req, res, next) {
     next();
 });
 
+// Sử dụng thư viện morgan : để log các thông báo
 app.use(morgan('dev'));
-app.use(express.static("src/public"));
 app.use(morgan('combined'));
+
+// Add middleware để phân tích json
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
+// Sử dụng Handlebars
 app.engine('hbs', hbs.engine({
     helpers: {
         ifEquals: function (arg1, arg2, options) {
@@ -60,6 +71,7 @@ app.get('/login', loginPage.loadLoginPage);
 app.get('/login.html', loginPage.loadLoginPage);
 app.post('/loginSystem', loginPage.loginSystem);
 app.get('/loginSystem', loginPage.loginSystemGet);
+
 //// logout router
 app.get('/logout', logout.logout);
 
@@ -91,4 +103,6 @@ app.get('/addQuiz', myCourse.addQuiz)
 app.get('/:majo/:sub', myCourse.getQuiz);
 
 // ====================== End router =======================
+
+// Tạo server với cổng port
 app.listen(port);

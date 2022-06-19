@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 // Tạo cấu hình kết nối MongoDB
 async function connect(){
     try {
-        await mongoose.connect('mongodb://localhost:27017/Top_Learn_Nodejs');
-        console.log("Thành công");
+        // Tạo kết nối đến với DB
+        mongoose.connect('mongodb://localhost:27017/Top_Learn_Nodejs');
+        console.debug("Thành công");
     } catch (error) {
-        console.log("Thất bại");
+        console.warn("Thất bại");
     }
     
 }
