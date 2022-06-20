@@ -1,16 +1,16 @@
 const { reset } = require("nodemon");
 const Accountt = require("../models/account");
-const logger = require('../../config/winston/winston')
+const logger = require("../../config/winston/winston");
 class LoginController {
   // Tải trang login
   loadLoginPage(req, res) {
     req.session.destroy();
-    logger.info('Hủy session');
+    logger.info("Hủy session");
     res.render("login", {
       title: "Đăng nhập | Đăng ký",
       icon: "login.png",
     });
-    logger.info('Tải trang login thành công');
+    logger.info("Tải trang login thành công");
   }
 
   // login vào hệ thống
@@ -26,17 +26,23 @@ class LoginController {
         password: password,
       },
       function (err, account) {
-        if (account === null) {
+        if (account == null) {
           Accountt.findOne({ email: email }, (err, account) => {
             if (account === null) {
               logger.error("Tài khoản chưa được đăng ký");
             } else {
               logger.error("Mật khẩu không chính xác");
             }
-            res.render("login", { tk: email, loginFail: true });
+            res.render("login", {
+              tk: email,
+              loginFail: true,
+              title: "Đăng nhập",
+              icon: 'login.png',
+            });
           });
         } else {
           var active = account.activated;
+          console.log(active);
           if (active === "activated") {
             sessData.isLogin = true;
             sessData.majo = "all";
@@ -64,7 +70,11 @@ class LoginController {
       },
       function (err, account) {
         if (account === null)
-          res.render("login", { tk: email, loginFail: true });
+          res.render("login", {
+            tk: email,
+            loginFail: true,
+            title: "Đăng nhập",
+          });
         else {
           var active = account.activated;
           if (active === "activated") {
